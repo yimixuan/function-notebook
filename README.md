@@ -55,7 +55,8 @@
 			return result;
 	 }
    ```
-   ## 文字轮播
+## 文字轮播
+
    ```
    (function($){
 	$.fn.myScroll = function(options){
