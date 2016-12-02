@@ -1,6 +1,6 @@
 # function-notebook
-##倒计时
-``
+## 倒计时
+```
 //servertiem 服务器时间  datatime 项目上线时间
 		function timeCount(servertime,datatime,obj){
 			
@@ -54,9 +54,9 @@
 	    	var result = ""+int_hour+int_minute+int_second;
 			return result;
 	 }
-   ``
-   ##文字轮播
-   ``
+   ```
+   ## 文字轮播
+   ```
    (function($){
 	$.fn.myScroll = function(options){
 	//默认配置
@@ -114,4 +114,4 @@
 	}
 
 })(jQuery);
-``
+```
