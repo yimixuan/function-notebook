@@ -1,0 +1,27 @@
+
+function circleLi (targLi) {
+	var timer;
+	var liWidth = targLi.outerWidth();//li的宽度
+	var len = targLi.length;
+	var ulWidth = liWidth*len;//li的个数
+	targLi.first().clone(true).appendTo(targLi.parent('ul'))
+  //在末尾追加一张假图
+  var index = 0;
+	function play () {
+		timer = setInterval(function () {
+			index++;
+				if (index<=len) {
+					auto(index)
+				}else{
+					index=0;
+					targLi.parent('ul').css('left',-(index*liWidth)+'px');
+					auto(1)
+				};
+		}, 3000)
+	};
+	function auto (index) {
+		targLi.parent('ul').stop(true, true).animate({left:-(index*liWidth)+'px'});
+	}
+	play();
+}
+circleLi($('.banner_list li'))
