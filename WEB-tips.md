@@ -3,7 +3,7 @@
 <embed src="http://player.youku.com/player.php/sid/填写视频ID处/v.swf?VideoIDS=填写视频ID处&embedid=&isAutoPlay=true&embedid" allowFullScreen="true" quality="high" width="426" height="341" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
 ```
 ### webstorm以及sublime使用less
-- 两个都需要先全局安装less，它们都需要lessc文件在cmd中输入
+- 两个都需要先全局安装less，它们都需要lessc文件。在cmd中输入
 ```
 npm install less -g
 ```    
