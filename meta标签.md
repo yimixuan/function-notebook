@@ -9,7 +9,8 @@
 ```
 meta name="format-detection" content="telephone=no"
 meta name="format-detection" content="email=no"
-meta name="format-detection" content="adress=no" 
+meta name="format-detection" content="address=no" 
+meta name="format-detection" content="date=no"
 也可以连写：meta name="format-detection" content="telephone=no,email=no,adress=no"
 ```
 下面具体说下每个设置的作用：
@@ -24,3 +25,4 @@ email=yes就开启了把文字默认为邮箱地址，这个meta就不用写了,
 > adress=no禁止跳转至地图！
 adress=yes就开启了点击地址直接跳转至地图的功能,在默认是情况下就是开启！
 ### 
+[参考：https://stackoverflow.com/questions/28027330/html-email-ios-format-detection](https://stackoverflow.com/questions/28027330/html-email-ios-format-detection)
