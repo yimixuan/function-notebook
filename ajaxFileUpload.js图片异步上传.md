@@ -125,3 +125,47 @@ ajaxFileUpload是一个异步上传文件的jQuery插件
 +　大家可使用变量$error直接打印的方法检查各参数是否正确，比起上面这些无效的错误提示还是方便很多。
 
 [参考链接地址：http://www.cnblogs.com/kissdodog/archive/2012/12/15/2819025.html](http://www.cnblogs.com/kissdodog/archive/2012/12/15/2819025.html)
+
+## demo
+
+```
+$("#plusbtn01").on("change", function(e){//input:file的id名
+        var file = e.target.files[0]; //获取图片资源
+        var imgNum = $('.uploadDiv01').find('.imgBox').length;
+        var opts = {
+            file :file,
+            imgNum :imgNum,
+            fileEleId : 'plusbtn01',
+            plusBtnId : 'plusImg01'
+        }
+        fileUpload(opts);
+
+});
+function fileUpload(opts) {
+        var url = basePath + "/frame/fileUpload.shtml";
+        if(opts.imgNum>7){
+            infoTips('#errInfo','最多可上传8张图片');
+            return false;
+        }
+
+        // 只选择图片文件
+        if (!opts.file.type.match('image.*')) {
+            infoTips('#errInfo','请选择图片文件');
+            return false;
+        }
+        $.ajaxFileUpload({
+            url : url,//**图片上传的接口地址
+            fileElementId: opts.fileEleId, //**input:file的id名
+            dataType: 'json', //*返回值类型 一般设置为json
+            success :　function (data) {
+                var fileUrl = data.url;//后台返回的图片地址
+                var imgStr = '<span class="imgBox"><img src="' + fileUrl + '" alt=""><i class="deleteImg"></i><input class="fileUrl" type="hidden" value="'+fileUrl+'"></span>';
+                $('#'+opts.plusBtnId).before(imgStr);
+
+            },error : function () {
+                infoTips('#errInfo','服务器异常，请稍后再试');
+            }
+        })
+    }
+//标*的是必传的值(dataType根据自己需求传~)
+```
