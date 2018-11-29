@@ -1,4 +1,11 @@
-> 其实，一共有四种方法，但能完全准确地识别出它们的只有一种方法，这也是面试过程中屡见不鲜的一道题。
+ #### js中的数据类型包括：
+```
+基本数据类型（5种）：number、string、 boolean、undefined、null
+
+引用数据类型（3种）：object、array、function
+```
+
+> 其实js判断数据类型一共有四种方法，但能完全准确地识别出它们的只有一种。
 
 > 主要是**typeof**、**instanceof**、 **Object.prototype.toString**
 
